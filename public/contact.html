@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Akbar</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"> 
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> 
+    <link rel="manifest" href="site.webmanifest"> 
+    <meta name="robots" content="noindex, nofollow">
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <h1><img src="android-chrome-192x192.png" alt="My website's favicon">Muhammad Akbar</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <section>
+        <h2>Contact</h2>
+        <article class ="contact">
+            <p>This form is for to reach out to me with any job or personal interest! Please fill out the following information:</p>
+            <form action="/contact" method="post">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label for="name" class="required">Name:</label>
+                    <input type="text" id="name" name="name" required autofocus placeholder="Your name" aria-required="true">
+                    <label for="email" class="required">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Your email address" aria-required="true">
+                </fieldset>
+                <fieldset>
+                    <legend>Message</legend>
+                    <label for="message" class="required">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Your message (minimum 10 characters and maximum 200 characters)" aria-required="true" minlength="10" maxlength="200"></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>What topic did you want to discuss about?</legend>
+                    <label for="topic">Topic:</label>
+                    <select id="topic" name="topic" required>
+                        <option value="Business">Business</option>
+                        <option value="Hobbies">Hobbies</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Availability</legend>
+                    <label>Preferred time for contact:</label><br>
+                    <input type="radio" id="morning" name="availability" value="Morning">
+                    <label for="morning">Morning</label><br>
+                    <input type="radio" id="afternoon" name="availability" value="Afternoon">
+                    <label for="afternoon">Afternoon</label><br>
+                    <input type="radio" id="evening" name="availability" value="Evening">
+                    <label for="evening">Evening</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Contact Methods</legend>
+                    <input type="checkbox" id="email-checkbox" name="contact-methods" value="Email" checked>
+                    <label for="email-checkbox">Email</label><br>
+                    <input type="checkbox" id="phone-checkbox" name="contact-methods" value="Phone">
+                    <label for="phone-checkbox">Phone</label><br>
+                    <input type="checkbox" id="discord-checkbox" name="contact-methods" value="Discord">
+                    <label for="discord-checkbox">Discord</label><br>
+                    <input type="checkbox" id="other-checkbox" name="contact-methods" value="Other">
+                    <label for="other-checkbox">Other</label><br>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+        </article>
+    </section>
+    <footer>
+        <p>&copy; 2024 Muhammad Akbar</p>
+    </footer>
+</body>
+</html>

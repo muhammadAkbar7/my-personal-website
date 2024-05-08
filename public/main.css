@@ -1,0 +1,318 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
+  /* @import "component1.css";   Component-specific stylesheets, if any.   */
+  /* @import url(//fonts.googleapis.com/css?family=Font+Name); Add fonts from a hosted services like Google Fonts.   */
+  @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:ital,wght@0,700;1,700&display=swap');
+
+
+/*   ----- Variables  -----  */
+:root {
+    --dark-color: #345F8E ; /* Hexadecimal */
+    --medium-color: #358D8F;
+    --light-color: #DCFFEB;
+    --contrasting-color: #F5DBA9; /* Contrasting color */
+    --transparent-color: rgba(160, 242, 234, 0.5); /* 50% opacity */
+  }
+  
+  /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+  body {       /* Can alternatively define in html {}. */
+    /* background-color: url('images/background-image.jpeg');; */
+    background-image:url('images/background-image.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0 5%; /* Example margin */
+    padding: 20px; /* Example padding */
+    max-width: 1200px; /* Example max-width */
+    color: var(--medium-color); /* Use text color variable */
+    font-family: 'Lato', sans-serif; /* Use the font-family name defined in @font-face */
+  }
+  
+  /*  ----- Page layout blocks -----  */
+  header {
+    background-color: var(--dark-color);
+    padding: 20px;
+    border-bottom: 2px solid var(--transparent-color);
+  }
+  header img {
+    max-width: 5%; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    padding: 0 10px; /* Add padding to the sides of the image */
+  }
+  main {
+    background-color: var(--light-color); /* Set background color */
+    padding: 20px;
+  }
+  footer {
+    background-color: var(--medium-color);
+    color: var(--contrasting-color); /* Set text color for better contrast */
+    padding: 20px;
+    border-top: 2px solid var(--dark-color);
+  }
+  section {}
+  article {}
+    #topic1 {}
+    #topic2 {}
+  div {}
+  aside {}
+ 
+  
+  /* ----- Anchors ----- Text links */
+  a {}
+  a:link {}
+  a:hover {}
+  a:active {}
+  a:visited {}
+  
+  /*  ----- Navigation ----- Override text links for navigation only.  */
+  nav {
+    display: flex;
+    background-color: var(--dark-color); 
+    justify-content: space-around;
+  }
+  nav a {
+    text-decoration: none;
+    padding: 10px 20px; /* Adjust padding for button size */
+    margin: 0 10px; /* Adjust margin for spacing between buttons */
+    background-color: var(--medium-color); /* Use variable for background color */
+    color: var(--contrasting-color); /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid var(--dark-color); /* Border */
+  }
+  nav a:hover {
+    background-color: var(--dark-color);
+  }
+
+  /* Local Navigation Styles */
+.local {
+    display: flex; /* Ensure all anchors fit within the body */
+    background-color: var(--light-color);
+    margin-top: 10px;
+  }
+  
+  .local a {
+    text-decoration: none;
+    padding: 8px 16px; /* Adjust padding for button size */
+    margin: 0 8px; /* Adjust margin for spacing between buttons */
+    background-color: var(--light-color); /* Use variable for background color */
+    color: var(--dark-color); /* Text color */
+    border-radius: 3px; /* Rounded corners */
+    border: 1px solid var(--dark-color); /* Border */
+  }
+  
+  .local a:hover {
+    background-color: var(--medium-color); /* Hover background color */
+  }
+
+  /* Gallery Styles */
+.gallery {
+    background-color: var(--contrasting-color);
+    display: flex;
+    flex-wrap: wrap; /* Ensure flex items wrap to the next line if they exceed container width */
+    justify-content: space-between; /* Distribute items evenly across the main axis */
+  }
+  
+  .gallery figure {
+    background-color: var(--light-color); /* Set background color */
+    width: calc(33.33% - 20px); /* Adjust width of figure to fit three figures per row with margin */
+    margin-bottom: 40px; /* Spacing between each figure */
+    padding: 10px; /* Padding inside figure */
+    border: 2px solid var(--dark-color); /* Border around each figure */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .gallery figure img {
+    width: 100%; /* Make images fill the figure container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+  }
+  
+  .gallery figure figcaption {
+    margin-top: 10px; /* Spacing between image and caption */
+    font-size: 14px; /* Adjust font size for captions */
+    color: var(--medium-color); /* Text color */
+    padding: 10px; /* Add padding to the caption */
+  }
+
+   /*  -----  Contact  ----- */
+   .contact {
+    background-color: var(--light-color); /* Set background color */
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+   }
+
+   .contact fieldset {
+    padding: 15px;
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+   }
+
+  .contact label[for="email"] {
+    margin-left: 15px; /* Add bottom margin for spacing */
+  }
+
+  .contact #message {
+    margin-left: 10px;
+  }
+
+  .contact .required::after {
+    content: "*"; /* Add asterisk */
+    color: red; /* Set color to red */
+  }
+  
+  
+  
+  /*  -----  Typography  ----- */
+  p {}
+  br {}
+  ol, ul, dl {}
+  li {}
+  dt {}
+  dd {}
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Use the imported heading font */
+  } 
+  h1 {
+    color: var(--contrasting-color);
+    display: flex;
+    justify-content: center;
+  }
+  h2 {
+    background-color: var(--contrasting-color);
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 10px;
+  }
+  h3 {}
+  h4 {}
+  h5 {}
+  h6 {}
+  
+  abbr {}
+  acronym {}
+  address {}
+  blockquote {}
+    q {}
+    cite {}
+  em {}
+  hr {}
+  mark {}
+  s {}
+  span {}
+  strong {}
+  sub {}
+  sup {}
+  time {}
+  
+  /*  ----- Coding or instructional typography ----- */
+  pre {}
+  code {}
+  kbd {}
+  samp {}
+  var {}
+  del {} 
+  ins {}
+  
+  /*  ----- Table ----- */
+  table {}
+  caption {}
+  thead {}
+  tbody {}
+  tfoot {}
+  tr {}
+    tr:nth-child(even) {}
+  th {}
+  td {}
+    td:nth-child(1) {}
+  colgroup {}
+  data {}
+  datalist {}
+  
+  
+  /*  ----- Form ----- */
+  form {}
+  fieldset {
+    border-color: var(--transparent-color);
+  }
+  legend {
+    color: var(--dark-color);
+  }
+  label {
+    margin-right: 12px;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
+  button {
+    padding: 8px;
+  }
+  input {
+    padding: 8px;
+  }
+  select {
+    padding: 8px;
+  }
+    optgroup {}
+    option {}
+    textarea {
+      padding: 8px;
+      height: 150px;
+      width: calc(200px); /* Adjust width to fit within fieldset with padding */
+    }
+  output {}
+  meter {}
+  progress {}
+  
+  
+  /* ----- Media ----- */
+  figure {}
+    figcaption {}
+    figure img {}
+  svg {}
+  picture {}
+    source {}
+  iframe {}
+  video {}
+  audio {}
+  embed {}
+  object {}
+  
+  /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+  .gallery {}
+  
+  .floatright {}
+  .floatleft {}
+  .center-middle {}
+  
+  .ten {}
+  .twenty {}
+  .thirty {}
+  .forty {}
+  .fifty {}
+  .sixty {}
+  .seventy {}
+  .eighty {}
+  
+  .radius {}
+  .circle {}
+  .boxshadow {}
+  .tshadow {} 
+  .gradient {}
+  .shape {}
+  
+  @keyframes App-logo {}
+  
+  /*   ===== TABLET  media query overrides mobile styles ===== */
+  @media all and (min-width: 600px) {}
+  
+  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+  @media all and (min-width: 1080px) {}
+  
+  /*   ===== PRINT  media query overrides previous styles =====  */
+  @media print {}
