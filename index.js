@@ -2,11 +2,23 @@
 
 const express = require('express');
 const nodemailer = require('nodemailer');
+const { products } = require('./products.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
+const productsData = require('./products.js').products;
+
+// company is merely the whole thing, the one line of the company, product, and pricing
+function compareCompany(company) {
+    for (const oneProduct of productsData) {
+        if (oneProduct.company === company) {
+            return oneProduct;
+        }
+    }
+}
 
 let htmlTop = `
 <!doctype html>
@@ -34,16 +46,16 @@ let htmlTop = `
         <a href="index.html">Home</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
+        <a href="order.html">Order</a>
     </nav>
     <section>
         <h2>Contact</h2>
         <article class ="contact">
-            <p>This form is for to reach out to me with any job or personal interest! Please fill out the following information:</p>
-            <div id="formResult">
+            <p id="formResult">
 `;
 
 let htmlBottom = `
-            </div>
+            </p>
         </article>
     </section>
     <footer>
@@ -52,7 +64,6 @@ let htmlBottom = `
 </body>
 </html>
 `;
-
 
 app.post('/contact', (req, res) => {
     let name = req.body.name;
@@ -74,13 +85,11 @@ app.post('/contact', (req, res) => {
         });
 
     let formResult = `
-        <h3>Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message}</p>
-        <p><strong>Topic:</strong> ${topic}</p>
-        <p><strong>Preferred time for contact:</strong> ${availability}</p>
-        <p><strong>Contact Methods:</strong> ${contactMethods.join(', ')}</p>
+        <h3>Hi, ${name}!</h3>
+        <p> You let me know know that you wanted to talk about <span class="bold-and-large">${topic}</span>!
+        You have indicated that you will be avaliable in the <span class="bold-and-large">${availability}</span>. 
+        I will get back to you through one of the following contact methods: <span class="bold-and-large">${contactMethods.join(', ')}</span>.
+        You will also get a confirmation email at <span class="bold-and-large">${email}</span></p>
     `;
 
     let result = `
@@ -117,6 +126,41 @@ app.post('/contact', (req, res) => {
     });
 
     res.send(fullHTML);
+});
+
+app.post('/submit-order', (req, res) => {
+
+    let name = req.body.name;
+    let address = req.body.address;
+    let instructions = req.body.instructions;
+    let quantity = req.body.quantity;
+    let product = req.body.product;
+
+    // Find the chosen product
+    const chosenProduct = compareCompany(product);
+    console.log(chosenProduct);
+
+    // Calculate total price
+    let totalPrice = (chosenProduct.price * quantity).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+    // Generate response
+    const responseHTML = `
+        ${htmlTop}
+        <style>
+        p {
+            margin-bottom: 0px;
+        }
+
+        </style>
+        <h3>Order Confirmation</h3>
+        <h2>Thank you, ${name}, for your order! Below is your order details:</h2>
+        <p>You're purchasing <em>${quantity} ${chosenProduct.product}s</em> from <em>${chosenProduct.company}</em>.
+        The total price of the order is: <em>${totalPrice}</em>. Each item was purchased at <em>$${chosenProduct.price}</em>.</p>
+        <p>We will deliver to <em>${address}</em> with the following delivery instructions: <em>${instructions}</em>. </p>
+        ${htmlBottom}
+    `;
+
+    res.send(responseHTML);
 });
 
 app.listen(PORT, () => {

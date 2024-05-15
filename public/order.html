@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Muhammad Akbar</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"> 
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> 
+    <link rel="manifest" href="site.webmanifest"> 
+    <meta name="robots" content="noindex, nofollow">
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <h1><img src="android-chrome-192x192.png" alt="My website's favicon">Muhammad Akbar</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html">Order</a>
+    </nav>
+    <section>
+        <h2>Order</h2>
+        <article class ="order">
+            <p>Welcome to our order page! Here you can select products from our list and place your order.</p>
+            <form action="/submit-order" method="POST">
+                <fieldset class ="inline">
+                    <legend>User Information</legend>
+                    <label for="name" class="required">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus>
+                    <label for="email" class="required">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Your email address" aria-required="true">
+                    <label for="address" class="required">Address:</label>
+                    <textarea id="address" name="address" required placeholder="Enter your address" aria-required="true"></textarea>
+                    <label>Delivery Instructions (Maximum of 300 characters)</label>
+                    <textarea id="instructions" name="instructions" placeholder="Enter delivery instructions (optional)" maxlength="300"></textarea>
+                </fieldset>
+                <fieldset class ="inline">
+                    <legend>Product Selection</legend>
+                    <table>
+                        <caption>You may only select one product</caption>
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Product</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AGYM</td>
+                                <td><input type="radio" id="product1" name="product" value="AGYM" required>
+                                    <label for="product1">Spinning Cat Scratcher Ball</label></td>
+                                <td>$52.99</td>
+                            </tr>
+                            <tr>
+                                <td>Jasonwell</td>
+                                <td><input type="radio" id="product2" name="product" value="Jasonwell" required>
+                                    <label for="product2">Foldable Dog Pool</label></td>
+                                <td>$27.25</td>
+                            </tr>
+                            <tr>
+                                <td>Expawlorer</td>
+                                <td><input type="radio" id="product3" name="product" value="Expawlorer" required>
+                                    <label for="product3">Dog Fence Window</label></td>
+                                <td>$30.50</td>
+                            </tr>
+                            <tr>
+                                <td>Lollimeow</td>
+                                <td><input type="radio" id="product4" name="product" value="Lollimeow" required>
+                                    <label for="product4">Capsule Pet Travel Backpack</label></td>
+                                <td>$59.00</td>
+                            </tr>
+                            <tr>
+                                <td>Drool'd</td>
+                                <td><input type="radio" id="product5" name="product" value="Drool'd" required>
+                                    <label for="product5">Cat Hamster Wheel</label></td>
+                                <td>$349.75</td>
+                            </tr>
+                            <tr>
+                                <td>Lollimeow</td>
+                                <td><input type="radio" id="product6" name="product" value="Lollimeow" required>
+                                    <label for="product6">Sherpa Bubble Cat Carrier Backpack</label></td>
+                                <td>$79.99</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="required">Please enter the quantity (between 1 and 100):</p>
+                    <input type="number" id="quantity" name="quantity" min="1" max="100" required placeholder="Enter quantity" aria-required="true">
+                    <br>
+                    <button type="submit" id="submit" name="submit" value="submit">Submit Order</button>
+                </fieldset>
+            </form>
+        </article>
+    </section>
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
