@@ -21,5 +21,5 @@ Features that have been built so far:
 
 Link to watch progress update:
 
-https://youtu.be/JoJtYjSDXWs
+[https://youtu.be/JoJtYjSDXWs](https://youtu.be/BbPlOQxl0MM)
 
