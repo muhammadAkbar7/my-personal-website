@@ -95,10 +95,13 @@
     display: flex; /* Ensure all anchors fit within the body */
     background-color: var(--light-color);
     margin-top: 10px;
+    flex-direction: row;
     flex-wrap: wrap;
+    padding: 10px;
   }
   
   .local a {
+    padding: 5px 10px;
     text-decoration: none;
     padding: 8px 16px; /* Adjust padding for button size */
     margin: 0 8px; /* Adjust margin for spacing between buttons */
@@ -277,6 +280,8 @@
   
   /*  ----- Table ----- */
   table {
+    width: 100%;
+    table-layout: auto;
     border: solid var(--medium-color);
     padding: 1%;
   }
