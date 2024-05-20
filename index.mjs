@@ -1,21 +1,27 @@
 'use strict';
 
 import 'dotenv/config';
+import pkg from 'nodemailer';
+import express from 'express';
+// import { products } from './products.js';
+import productsModule from './products.js'; // Import the entire module
+const { products } = productsModule; // Destructure to get the products
 
-const express = require('express');
-const nodemailer = require('nodemailer');
-const { products } = require('./products.js');
+
+// const nodemailer = require('nodemailer');
+const nodemailer = pkg;
+// const { products } = require('./products.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-const productsData = require('./products.js').products;
+// const productsData = require('./products.js').products;
 
 // company is merely the whole thing, the one line of the company, product, and pricing
 function compareCompany(company) {
-    for (const oneProduct of productsData) {
+    for (const oneProduct of products) {
         if (oneProduct.company === company) {
             return oneProduct;
         }

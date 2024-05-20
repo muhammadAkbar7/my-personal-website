@@ -11,7 +11,9 @@ const products = [
 ];
 
 // Allow exporting of the object to other functions:
-module.exports.products = products;
+// module.exports.products = products;
+// export { products };
+module.exports = { products };
 
 
 // Display the object in a table in the terminal console to confirm it works:

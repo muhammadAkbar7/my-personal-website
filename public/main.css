@@ -60,13 +60,26 @@
     #topic1 {}
     #topic2 {}
   div {}
-  aside {}
+  aside {
+    width: 250px; /* Define a width */
+    margin: 10px; /* Add margin */
+    padding: 10px; /* Add padding */
+    border: 1px solid var(--dark-color); /* Define border */
+    color: var(--medium-color); /* Text color */
+    background-color: var(--light-color); /* Background color */
+    float: left; /* Float to the left */
+  }
  
   
   /* ----- Anchors ----- Text links */
   a {}
-  a:link {}
-  a:hover {}
+  a:link {
+    /* background-color: var(--contrasting-color); */
+    color: var(--medium-color);
+  }
+  a:hover {
+    color: var(--contrasting-color);
+  }
   a:active {}
   a:visited {}
   
@@ -293,6 +306,11 @@
     border: solid var(--medium-color);
     padding: 1%;
   }
+
+  table img {
+    width: 100px; /* Define width (or height, but not both) */
+    border: 1px solid var(--dark-color); /* Define border */
+}
   
   caption {
     text-align: left;

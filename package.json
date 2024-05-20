@@ -2,14 +2,15 @@
   "name": "muhammad-akbar-personal-web-app",
   "version": "1.0.0",
   "description": "This is my personal website",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.mjs"
   },
   "author": "Muhammad Akbar",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "nodemailer": "^6.9.13"
   }
