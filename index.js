@@ -1,5 +1,8 @@
 'use strict';
 
+import 'dotenv/config';
+
+
 const express = require('express');
 const nodemailer = require('nodemailer');
 const { products } = require('./products.js');
