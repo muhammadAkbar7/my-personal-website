@@ -23,3 +23,7 @@ Link to watch progress update:
 
 [https://youtu.be/JoJtYjSDXWs](https://youtu.be/BbPlOQxl0MM)
 
+Update 2:
+
+Added a new Staff page of randomly-generated users to existing website. This page will fetch data from an external API called Random User GeneratorLinks to an external site., which serves fake user data for the purposes of testing. The data will display in an HTML table after clicking a button to fetch the data. In addition, a success message will display with the API is working and a failure message when it is not.
+
