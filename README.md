@@ -29,5 +29,5 @@ Added a new Staff page of randomly-generated users to existing website. This pag
 
 Update 3:
 
-Converting front-end and back-end to use React. Update repo found here: https://github.com/muhammadAkbar7/my-personal-website-react
+Converting front-end and back-end to use React. Update repo found here: [https://github.com/muhammadAkbar7/my-personal-website-react](https://github.com/muhammadAkbar7/my-website-react)
 
