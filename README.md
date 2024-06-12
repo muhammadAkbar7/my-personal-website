@@ -1,5 +1,9 @@
 # My Personal Website
 
+### React Conversion Link
+
+[https://github.com/muhammadAkbar7/my-personal-website-react](https://github.com/muhammadAkbar7/my-website-react)
+
 ### Description
 
 Made this website for my CS 290: Web Devlopment Class at Oregon State.
@@ -29,5 +33,5 @@ Added a new Staff page of randomly-generated users to existing website. This pag
 
 Update 3:
 
-Converting front-end and back-end to use React. Update repo found here: [https://github.com/muhammadAkbar7/my-personal-website-react](https://github.com/muhammadAkbar7/my-website-react)
+Converting front-end and back-end to use React. Updated repo found here: [https://github.com/muhammadAkbar7/my-personal-website-react](https://github.com/muhammadAkbar7/my-website-react)
 
